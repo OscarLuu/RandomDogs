@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/RandomDogs/static/js/runtime~main.c444cf8a.js"
   },
   {
-    "revision": "1c1d890c16563b588707",
-    "url": "/RandomDogs/static/js/main.1c1d890c.chunk.js"
+    "revision": "6f79fd5b732e6597a8bf",
+    "url": "/RandomDogs/static/js/main.6f79fd5b.chunk.js"
   },
   {
     "revision": "b37b0e24dc7a40cb64e3",
     "url": "/RandomDogs/static/js/1.b37b0e24.chunk.js"
   },
   {
-    "revision": "1c1d890c16563b588707",
-    "url": "/RandomDogs/static/css/main.cfd5198c.chunk.css"
+    "revision": "6f79fd5b732e6597a8bf",
+    "url": "/RandomDogs/static/css/main.0f1d8748.chunk.css"
   },
   {
-    "revision": "052fbb3af07fa5dda3d70a4478c2b584",
+    "revision": "471f6854779e9c2f076918adaf53d06a",
     "url": "/RandomDogs/index.html"
   }
 ];
