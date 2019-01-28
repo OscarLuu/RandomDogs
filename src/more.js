@@ -8,15 +8,16 @@ const endURL = "/images";
 const ImageLoad = props => {
   return (
     <div>
-      <p>
-        {props.data.map(function(data) {
-          return (
-            <div className="image-gallery">
-              <img src={data} className="image-sizing" />
-            </div>
-          );
-        })}
-      </p>
+      {props.data.slice(0, props.limit).map(function(data) {
+        return (
+          <div className="image-gallery">
+            <img src={data} className="image" />
+          </div>
+        );
+      })}
+      <button onClick={props.onClick} className="button">
+        Load More
+      </button>
     </div>
   );
 };
@@ -25,8 +26,17 @@ class More extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dogImages: null
+      dogImages: null,
+      limit: 5
     };
+    this.onLoadMore = this.onLoadMore.bind(this);
+  }
+
+  onLoadMore() {
+    this.setState({
+      limit: this.state.limit + 5
+    });
+    console.log(this.state.limit);
   }
 
   componentDidMount() {
@@ -39,12 +49,20 @@ class More extends Component {
 
   render() {
     return (
-      <div className="container">
-        <Link to="/">Go back</Link>
+      <div className="container-more">
+        <div className="button-margin">
+          <Link className="button" to="/" style={{ textDecoration: "none" }}>
+            Go back
+          </Link>
+        </div>
         {!this.state.dogImages ? (
           <p>Loading</p>
         ) : (
-          <ImageLoad data={this.state.dogImages} />
+          <ImageLoad
+            data={this.state.dogImages}
+            onClick={this.onLoadMore}
+            limit={this.state.limit}
+          />
         )}
       </div>
     );

@@ -83,6 +83,7 @@ class Weather extends React.Component {
         </form>
         <DogImage url={this.state.dogImg} />
         <Link
+          style={{ textDecoration: "none" }}
           className="button"
           to={{
             pathname: "/moredogs",
