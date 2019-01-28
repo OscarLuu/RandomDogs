@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./index.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const API = "https://dog.ceo/api/breed/";
 const endAPI = "/images/random";
@@ -81,6 +82,19 @@ class Weather extends React.Component {
           </label>
         </form>
         <DogImage url={this.state.dogImg} />
+        <Link
+          className="button"
+          to={{
+            pathname: "/moredogs",
+            search: `?dog=` + this.state.dogSelected,
+            state: {
+              dogBreed: this.state.dogSelected
+            }
+          }}
+        >
+          {" "}
+          More{" "}
+        </Link>
       </div>
     );
   }
