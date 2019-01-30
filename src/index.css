@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Prata|Sarabun");
+/* @import url("https://fonts.googleapis.com/css?family=Prata|Sarabun");
 
 body {
   font-family: "Sarabun", sans-serif;
@@ -58,8 +58,8 @@ form {
 }
 
 .image {
-  max-width: 300px;
-  max-height: 400px;
+  max-width: 500px;
+  max-height: 600px;
   width: auto;
   height: auto;
   margin: 5px;
@@ -85,4 +85,4 @@ form {
 
 .button-margin {
   padding-top: 10px;
-}
+} */

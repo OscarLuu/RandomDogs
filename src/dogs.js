@@ -8,7 +8,7 @@ const endAPI = "/images/random";
 function Title() {
   return (
     <div>
-      <h1 className="Title">Random Dog Image by Breed</h1>
+      <h1>Random Dog Image by Breed</h1>
     </div>
   );
 }
@@ -16,7 +16,7 @@ function Title() {
 function DogImage(props) {
   return (
     <div>
-      <img className="dog" src={props.url} />
+      <img src={props.url} />
     </div>
   );
 }
@@ -51,7 +51,6 @@ class Weather extends React.Component {
       .then(response => response.json())
       .then(responseJson => {
         const array = Object.keys(responseJson.message);
-        console.log(array);
         this.setState({
           dogs: array
         });
@@ -60,16 +59,12 @@ class Weather extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <Title />
         <form>
           <label>
             Pick a dog breed and get a random image:
-            <select
-              className="select"
-              value={this.state.dogSelected}
-              onChange={this.handleChange}
-            >
+            <select value={this.state.dogSelected} onChange={this.handleChange}>
               <option selected disabled />
               {this.state.dogs.map(function(dog) {
                 return (
@@ -84,7 +79,6 @@ class Weather extends React.Component {
         <DogImage url={this.state.dogImg} />
         <Link
           style={{ textDecoration: "none" }}
-          className="button"
           to={{
             pathname: "/moredogs",
             search: `?dog=` + this.state.dogSelected,

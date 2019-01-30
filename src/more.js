@@ -10,14 +10,12 @@ const ImageLoad = props => {
     <div>
       {props.data.slice(0, props.limit).map(function(data) {
         return (
-          <div className="image-gallery">
-            <img src={data} className="image" />
+          <div>
+            <img src={data} />
           </div>
         );
       })}
-      <button onClick={props.onClick} className="button">
-        Load More
-      </button>
+      <button onClick={props.onClick}>Load More</button>
     </div>
   );
 };
@@ -49,9 +47,9 @@ class More extends Component {
 
   render() {
     return (
-      <div className="container-more">
-        <div className="button-margin">
-          <Link className="button" to="/" style={{ textDecoration: "none" }}>
+      <div>
+        <div>
+          <Link to="/" style={{ textDecoration: "none" }}>
             Go back
           </Link>
         </div>
