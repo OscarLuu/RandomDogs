@@ -9,7 +9,7 @@ const endAPI = "/images/random";
 function Title() {
   return (
     <div>
-      <p className="title">Random Dog Pictures</p>
+      <p className="title">Dog Encyclopedia</p>
     </div>
   );
 }
@@ -37,8 +37,15 @@ class DogImage extends Component {
           className="image"
           onClick={this.handleOpenModal}
         />
-        <Modal isOpen={this.state.showModal}>
-          <img src={this.props.url} onClick={this.handleCloseModal} />
+        <Modal isOpen={this.state.showModal} className="modal">
+          <div className="modal-div">
+            <img
+              src={this.props.url}
+              onClick={this.handleCloseModal}
+              onAfterOpen={this.handleCloseModal}
+              className="modal-image"
+            />
+          </div>
         </Modal>
       </div>
     );
@@ -87,7 +94,7 @@ class Main extends React.Component {
         <Title />
         <form>
           <label className="text">
-            Pick a dog breed and get a random image:
+            Pick a dog breed:
             <select
               value={this.state.dogSelected}
               onChange={this.handleChange}
