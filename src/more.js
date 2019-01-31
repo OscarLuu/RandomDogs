@@ -6,46 +6,20 @@ import Modal from "react-modal";
 const beginURL = "https://dog.ceo/api/breed/";
 const endURL = "/images";
 
-// const ImageLoad = props => {
-//   return (
-//     <div>
-//       <p className="title-more">
-//         Pictures of{" "}
-//         {props.breed.slice(0, 1).toUpperCase() +
-//           props.breed.slice(1, props.breed.length)}
-//         s
-//       </p>
-//       <div className="image-gallery">
-//         {props.data.slice(0, props.limit).map(function(data) {
-//           return (
-//             <div className="image-gallery">
-//               <img src={data} className="more-image" />
-//             </div>
-//           );
-//         })}
-//       </div>
-//       <div className="button-center">
-//         <button onClick={props.onClick} className="button">
-//           Load More
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
 class ImageLoad extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false
+      showModal: false,
+      currentImg: ""
     };
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
   }
 
-  handleOpenModal() {
-    this.setState({ showModal: true });
-  }
+  handleOpenModal = data => {
+    this.setState({ showModal: true, currentImg: data });
+  };
 
   handleCloseModal() {
     this.setState({ showModal: false });
@@ -65,17 +39,22 @@ class ImageLoad extends Component {
             return (
               <div className="image-gallery">
                 <img
+                  key={data}
                   src={data}
                   className="more-image"
-                  onClick={this.handleOpenModal}
+                  onClick={() => this.handleOpenModal(data)}
                 />
-                <Modal isOpen={this.state.showModal}>
-                  <img src={data} onClick={this.handleCloseModal} />
-                </Modal>
               </div>
             );
           })}
         </div>
+        <Modal isOpen={this.state.showModal} className="modal-more">
+          <img
+            src={this.state.currentImg}
+            onClick={this.handleCloseModal}
+            className="modal-image-more"
+          />
+        </Modal>
         <div className="button-center">
           <button onClick={this.props.onClick} className="button">
             Load More

@@ -101,6 +101,10 @@ body {
   max-width: 800px;
 }
 
+.more-image:hover {
+  opacity: 0.7;
+}
+
 .image-gallery {
   display: flex;
   flex-direction: row;
@@ -170,4 +174,16 @@ body {
 
 .button-center {
   text-align: center;
+}
+
+.modal-more {
+  padding: 200px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-image-more {
+  border-radius: 6px;
+  max-width: 800px;
 }
