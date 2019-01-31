@@ -94,7 +94,7 @@ class More extends Component {
       <div className="container-more">
         <div className="more-button-div">
           <Link
-            to="/"
+            to="/RandomDogs/"
             style={{ textDecoration: "none" }}
             className="back-button"
           >

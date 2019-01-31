@@ -9,7 +9,7 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
-            <Route exact path="/" component={Dogs} />
+            <Route exact path="/RandomDogs/" component={Dogs} />
             <Route path="/moredogs" component={More} />
             <Route
               render={() => {
@@ -17,7 +17,7 @@ class App extends Component {
                   <div className="container">
                     <p className="title"> 404! Sorry page not found.</p>
                     <div className="button-div">
-                      <Link to="/" className="button">
+                      <Link to="/RandomDogs/" className="button">
                         {" "}
                         Go Home{" "}
                       </Link>
