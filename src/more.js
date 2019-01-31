@@ -103,7 +103,7 @@ class More extends Component {
         </div>
         <div>
           {!this.state.dogImages ? (
-            <p>Loading</p>
+            <p className="title">Loading...</p>
           ) : (
             <ImageLoad
               data={this.state.dogImages}

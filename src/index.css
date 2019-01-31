@@ -30,7 +30,8 @@ body {
   background-color: hsl(212, 33%, 89%);
   border-radius: 5px;
   padding: 25px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+    inset 0 8px hsl(185, 62%, 45%);
 }
 
 .image-div {
@@ -49,7 +50,7 @@ body {
 }
 
 .image:hover {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .select {
@@ -99,10 +100,11 @@ body {
 .modal-image {
   border-radius: 5px;
   max-width: 800px;
+  max-height: 600px;
 }
 
 .more-image:hover {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .image-gallery {
@@ -128,7 +130,8 @@ body {
   background-color: hsl(212, 33%, 89%);
   border-radius: 5px;
   padding: 25px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+    inset 0 8px hsl(185, 62%, 45%);
 }
 
 .back-button {
@@ -186,4 +189,22 @@ body {
 .modal-image-more {
   border-radius: 6px;
   max-width: 800px;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(209, 61%, 16%);
+}
+
+a:hover {
+  color: hsl(185, 62%, 45%);
+}
+
+.footer-div {
+  background-color: hsl(212, 33%, 89%);
+  position: fixed;
+  width: 550px;
+  bottom: 0;
+  border-radius: 5px 5px 0 0;
+  box-shadow: inset 0 2px 0 hsl(210, 36%, 96%), 0 5px 5px hsla(0, 0%, 0%, 0.2);
 }

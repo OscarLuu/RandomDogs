@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
-import "./index.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Footer from "./footer";
+import "./index.css";
 
 const API = "https://dog.ceo/api/breed/";
 const endAPI = "/images/random";
@@ -9,7 +10,7 @@ const endAPI = "/images/random";
 function Title() {
   return (
     <div>
-      <p className="title">Dog Encyclopedia</p>
+      <p className="title">Dog Breed Showcase</p>
     </div>
   );
 }
@@ -90,45 +91,48 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <Title />
-        <form>
-          <label className="text">
-            Pick a dog breed:
-            <select
-              value={this.state.dogSelected}
-              onChange={this.handleChange}
-              className="select"
-            >
-              <option selected disabled className="options" />
-              {this.state.dogs.map(function(dog) {
-                return (
-                  <option key={dog} value={dog} className="options">
-                    {dog.slice(0, 1).toUpperCase() + dog.slice(1, dog.length)}
-                  </option>
-                );
-              })}
-            </select>
-          </label>
-        </form>
-        <DogImage url={this.state.dogImg} />
-        <div className="button-div">
-          {!this.state.dogSelected ? null : (
-            <Link
-              to={{
-                pathname: "/moredogs",
-                search: `?dog=` + this.state.dogSelected,
-                state: {
-                  dogBreed: this.state.dogSelected
-                }
-              }}
-              className="more-button"
-            >
-              {" "}
-              More Dogs{" "}
-            </Link>
-          )}
+      <div>
+        <div className="container">
+          <Title />
+          <form>
+            <label className="text">
+              Get awesome pictures of different breeds of dogs:{" "}
+              <select
+                value={this.state.dogSelected}
+                onChange={this.handleChange}
+                className="select"
+              >
+                <option selected disabled className="options" />
+                {this.state.dogs.map(function(dog) {
+                  return (
+                    <option key={dog} value={dog} className="options">
+                      {dog.slice(0, 1).toUpperCase() + dog.slice(1, dog.length)}
+                    </option>
+                  );
+                })}
+              </select>
+            </label>
+          </form>
+          <DogImage url={this.state.dogImg} />
+          <div className="button-div">
+            {!this.state.dogSelected ? null : (
+              <Link
+                to={{
+                  pathname: "/moredogs",
+                  search: `?dog=` + this.state.dogSelected,
+                  state: {
+                    dogBreed: this.state.dogSelected
+                  }
+                }}
+                className="more-button"
+              >
+                {" "}
+                More Pictures{" "}
+              </Link>
+            )}
+          </div>
         </div>
+        <Footer />
       </div>
     );
   }
