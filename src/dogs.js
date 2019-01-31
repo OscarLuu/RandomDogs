@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Modal from "react-modal";
 import "./index.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -13,15 +14,38 @@ function Title() {
   );
 }
 
-function DogImage(props) {
-  return (
-    <div className="image-div">
-      <img src={props.url} className="image" />
-    </div>
-  );
+class DogImage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false
+    };
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+  }
+  handleOpenModal() {
+    this.setState({ showModal: true });
+  }
+  handleCloseModal() {
+    this.setState({ showModal: false });
+  }
+  render() {
+    return (
+      <div className="image-div">
+        <img
+          src={this.props.url}
+          className="image"
+          onClick={this.handleOpenModal}
+        />
+        <Modal isOpen={this.state.showModal}>
+          <img src={this.props.url} onClick={this.handleCloseModal} />
+        </Modal>
+      </div>
+    );
+  }
 }
 
-class Weather extends React.Component {
+class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -103,4 +127,4 @@ class Weather extends React.Component {
   }
 }
 
-export default Weather;
+export default Main;
