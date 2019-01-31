@@ -48,6 +48,10 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
 }
 
+.image:hover {
+  opacity: 0.8;
+}
+
 .select {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
@@ -99,4 +103,54 @@ body {
 
 .modal-image {
   border-radius: 5px;
+}
+
+.image-gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 12px;
+  justify-content: center;
+}
+
+.more-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
+}
+
+.container-more {
+  margin: 64px auto;
+  width: 800px;
+  height: auto;
+  background-color: hsl(212, 33%, 89%);
+  border-radius: 5px;
+  padding: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.back-button {
+  text-decoration: none;
+  border: 2px solid hsl(210, 22%, 49%);
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: hsl(209, 61%, 16%);
+  width: 64px;
+  background-color: hsl(212, 33%, 89%);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.more-button-div {
+  padding: 20px;
+}
+
+.title-more {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: hsl(184, 77%, 34%);
+  text-align: center;
+  font-size: 20px;
 }
