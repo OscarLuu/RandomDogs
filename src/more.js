@@ -53,15 +53,17 @@ class More extends Component {
             Go back
           </Link>
         </div>
-        {!this.state.dogImages ? (
-          <p>Loading</p>
-        ) : (
-          <ImageLoad
-            data={this.state.dogImages}
-            onClick={this.onLoadMore}
-            limit={this.state.limit}
-          />
-        )}
+        <div>
+          {!this.state.dogImages ? (
+            <p>Loading</p>
+          ) : (
+            <ImageLoad
+              data={this.state.dogImages}
+              onClick={this.onLoadMore}
+              limit={this.state.limit}
+            />
+          )}
+        </div>
       </div>
     );
   }
